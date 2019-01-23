@@ -247,13 +247,13 @@ Os certificados são um ponto crítico já que estes tem validade de apenas um a
 Além disso as SEFAZ vem trocando suas cadeias de certificado a cada atualização. Dessa forma se surgirem erros de SSL vale a pena verificar se existem novas atualizações de certificados.
 Para gerar a cadeia de certificados, disponibilizamos um pequeno helper que baixa os certificados das SEFAZ e gera o arquivo automaticamente:
 ```java
-public static void main(String args[]){
-    try {
-        FileUtils.writeByteArrayToFile(new File("/tmp/producao.cacerts"), NFGeraCadeiaCertificados.geraCadeiaCertificados(NFAmbiente.PRODUCAO, "senha"));
-        FileUtils.writeByteArrayToFile(new File("/tmp/homologacao.cacerts"), NFGeraCadeiaCertificados.geraCadeiaCertificados(NFAmbiente.HOMOLOGACAO, "senha"));
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+try {
+  FileUtils.writeByteArrayToFile(new File("/tmp/producao.cacerts"),
+      GeraCadeiaCertificados.geraCadeiaCertificados(DFAmbiente.PRODUCAO, "senha"));
+  FileUtils.writeByteArrayToFile(new File("/tmp/homologacao.cacerts"),
+      GeraCadeiaCertificados.geraCadeiaCertificados(DFAmbiente.HOMOLOGACAO, "senha"));
+} catch (final Exception e) {
+  e.printStackTrace();
 }
 ```
 
