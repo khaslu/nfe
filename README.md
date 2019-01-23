@@ -249,11 +249,11 @@ Para gerar a cadeia de certificados, disponibilizamos um pequeno helper que baix
 ```java
 public static void main(String args[]){
     try {
-        FileUtils.writeByteArrayToFile(new File("/tmp/producao.cacerts"), NFGeraCadeiaCertificados.geraCadeiaCertificados(NFAmbiente.PRODUCAO, "senha"));
-        FileUtils.writeByteArrayToFile(new File("/tmp/homologacao.cacerts"), NFGeraCadeiaCertificados.geraCadeiaCertificados(NFAmbiente.HOMOLOGACAO, "senha"));
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+			FileUtils.writeByteArrayToFile(new File("/tmp/producao.cacerts"), GeraCadeiaCertificados.geraCadeiaCertificados(DFAmbiente.PRODUCAO, "senha"));
+			FileUtils.writeByteArrayToFile(new File("/tmp/homologacao.cacerts"), GeraCadeiaCertificados.geraCadeiaCertificados(DFAmbiente.HOMOLOGACAO, "senha"));
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
 }
 ```
 
